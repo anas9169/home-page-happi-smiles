@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="220" viewBox="0 0 720 220" role="img" aria-labelledby="title desc">
+  <title id="title">Happi Smiles Dental Clinic logo</title>
+  <desc id="desc">A warm tooth symbol with Happi Smiles Dental Clinic text.</desc>
+  <rect width="720" height="220" rx="28" fill="#FFF8EF"/>
+  <g transform="translate(42 26)">
+    <path d="M64 12c-28 0-48 23-48 55 0 31 12 74 27 99 8 14 27 10 29-6l6-39c1-7 11-7 12 0l6 39c2 16 21 20 29 6 15-25 27-68 27-99 0-32-20-55-48-55-14 0-24 8-32 8s-18-8-32-8Z" fill="#F5D7A7" stroke="#D6A35C" stroke-width="6"/>
+    <circle cx="57" cy="70" r="6" fill="#514131"/>
+    <circle cx="111" cy="70" r="6" fill="#514131"/>
+    <path d="M58 103c11 14 40 14 52 0" fill="none" stroke="#514131" stroke-width="7" stroke-linecap="round"/>
+    <path d="M154 26l7 14 14 7-14 7-7 14-7-14-14-7 14-7 7-14Z" fill="#F5D7A7" stroke="#D6A35C" stroke-width="4"/>
+    <path d="M187 65c17 6 22 25 7 38-7 6-17 12-26 17-9-5-19-11-26-17-15-13-10-32 7-38 8-3 15 1 19 7 4-6 11-10 19-7Z" fill="#F5D7A7" stroke="#D6A35C" stroke-width="4"/>
+  </g>
+  <text x="250" y="94" fill="#514131" font-family="Georgia, 'Times New Roman', serif" font-size="52" letter-spacing="8" font-weight="700">HAPPI SMILES</text>
+  <text x="254" y="150" fill="#514131" font-family="Arial, sans-serif" font-size="28" letter-spacing="12" font-weight="700">DENTAL CLINIC</text>
+</svg>
