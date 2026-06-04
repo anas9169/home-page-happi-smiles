@@ -186,9 +186,9 @@
     /* ── HAMBURGER ── */
     .hamburger {
       display: none;
-      background: var(--teal);
+      background: rgba(255, 252, 247, 0.94);
       color: #2B2118;
-      border: none;
+      border: 1px solid rgba(214, 163, 92, 0.4);
       width: 46px;
       height: 46px;
       border-radius: 12px;
@@ -199,11 +199,12 @@
       gap: 5px;
       padding: 0;
       flex-shrink: 0;
-      transition: background 180ms ease, transform 180ms ease;
+      box-shadow: 0 10px 24px rgba(81, 65, 49, 0.14);
+      transition: background 180ms ease, border-color 180ms ease, transform 180ms ease;
       z-index: 31;
     }
-    .hamburger:hover { background: var(--teal-dark); transform: scale(1.05); }
-    .hamburger.open { background: var(--teal-dark); }
+    .hamburger:hover { background: var(--teal); border-color: var(--teal); transform: translateY(-1px); }
+    .hamburger.open { background: var(--teal); border-color: var(--teal); }
     .hamburger span {
       display: block;
       width: 20px;
@@ -222,8 +223,8 @@
       display: none;
       position: absolute;
       top: 100%;
-      left: 0;
-      right: 0;
+      left: 14px;
+      right: 14px;
       background: rgba(255, 252, 247, 0.98);
       backdrop-filter: blur(16px);
       border-top: 1px solid var(--line);
@@ -409,7 +410,7 @@
       width: 100%;
       color: var(--ink);
       /* Ensure the native picker icon stays visible */
-      padding-right: 10px;
+      padding-right: 14px;
     }
     /* When no value is chosen the input colour is transparent so the overlay shows */
     .date-wrapper input[type="date"]:not([data-has-value]) {
@@ -430,6 +431,7 @@
       pointer-events: none;
       white-space: nowrap;
       overflow: hidden;
+      z-index: 1;
     }
     /* Hide overlay once a value exists */
     .date-wrapper input[type="date"][data-has-value] ~ .date-overlay {
@@ -495,7 +497,9 @@
     .site-footer {
       position: relative;
       overflow: hidden;
-      background: linear-gradient(145deg, #2E1F12 0%, #3C2A18 55%, #2B1D10 100%);
+      background:
+        linear-gradient(90deg, rgba(43, 29, 16, 0.88), rgba(43, 29, 16, 0.72)),
+        url("assets/clinic.jpg") center / cover no-repeat;
       color: var(--white);
       padding-top: 64px;
     }
@@ -504,24 +508,12 @@
     .site-footer::before {
       content: "";
       position: absolute;
-      top: -120px;
-      right: -120px;
-      width: 480px;
-      height: 480px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(214, 163, 92, 0.18) 0%, transparent 70%);
+      inset: 0;
+      background: linear-gradient(180deg, rgba(255, 248, 239, 0.05), rgba(214, 163, 92, 0.14));
       pointer-events: none;
     }
     .site-footer::after {
-      content: "";
-      position: absolute;
-      bottom: -80px;
-      left: -80px;
-      width: 360px;
-      height: 360px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(214, 163, 92, 0.12) 0%, transparent 70%);
-      pointer-events: none;
+      content: none;
     }
 
     /* Subtle dot grid texture overlay (very light) */
@@ -620,6 +612,8 @@
       .nav-links { display: none; }
       .nav > .btn { display: none; }
       .hamburger { display: flex; }
+      .mobile-nav { display: none; }
+      .mobile-nav.open { display: flex; }
 
       .hero-grid, .about-grid { grid-template-columns: 1fr; }
       .hero-media { min-height: auto; }
@@ -631,6 +625,7 @@
 
       /* Footer: first column left-align on tablet too */
       .footer-grid > div:first-child { align-items: flex-start; text-align: left; }
+      .footer-grid > div { text-align: left; }
       .footer-brand-lockup { justify-content: flex-start; }
       .socials { justify-content: flex-start; }
     }
@@ -657,7 +652,19 @@
       .booking-form .btn { grid-column: auto; width: 100%; }
       .testimonial-slide { min-width: 100%; }
       .contact-line { justify-content: flex-start; }
-      .site-footer { padding-top: 52px; }
+      .site-footer {
+        padding-top: 52px;
+        background:
+          linear-gradient(90deg, rgba(43, 29, 16, 0.9), rgba(43, 29, 16, 0.74)),
+          url("assets/clinic.jpg") center / cover no-repeat;
+      }
+      .footer-grid {
+        gap: 30px;
+        text-align: left;
+      }
+      .footer-grid > div {
+        text-align: left;
+      }
 
       /* ── FOOTER MOBILE: everything left-aligned ── */
       .footer-grid > div:first-child {
@@ -691,6 +698,13 @@
       }
       .socials {
         justify-content: flex-start;
+      }
+      .footer-bottom {
+        text-align: left;
+      }
+      .date-overlay {
+        color: #6F5B44;
+        font-size: 0.95rem;
       }
     }
   </style>
